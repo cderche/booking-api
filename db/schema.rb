@@ -10,14 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121133934) do
+ActiveRecord::Schema.define(version: 20161121171453) do
+
+  create_table "extras", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.boolean  "quantity_based"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "extras_services", id: false, force: :cascade do |t|
+    t.integer "service_id", null: false
+    t.integer "extra_id",   null: false
+    t.index ["service_id", "extra_id"], name: "index_extras_services_on_service_id_and_extra_id"
+  end
 
   create_table "frequencies", force: :cascade do |t|
     t.string   "code"
-    t.string   "t_name"
+    t.string   "name"
     t.decimal  "percent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pricing_parameters", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "quantity_minimum"
+    t.integer  "quantity_maximum"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "pricing_parameters_services", id: false, force: :cascade do |t|
+    t.integer "service_id",           null: false
+    t.integer "pricing_parameter_id", null: false
+    t.index ["service_id", nil], name: "index_pricing_parameters_services_on_service_id_and_pp_id"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name"
+    t.decimal  "price"
+    t.boolean  "hourly"
+    t.integer  "resource_minimum"
+    t.integer  "resource_maximum"
+    t.integer  "hours_minimum"
+    t.integer  "hours_maximum"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|

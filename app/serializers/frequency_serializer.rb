@@ -1,3 +1,4 @@
 class FrequencySerializer < ActiveModel::Serializer
-  attributes :id, :code, :name, :percent
+  attributes :id, :code, :percent
+  attribute :t_name, key: :name
 end

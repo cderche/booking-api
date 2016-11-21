@@ -6,3 +6,16 @@ ru:
       once: "Один раз"
       bi_weekly: "Раз в 2 недели"
       weekly: "Раз в неделю"
+  service:
+    name:
+      1bedroom: "1 Спальня"
+      2bedroom: "2 Спальни"
+      3bedroom: "3 Спальни"
+      4bedroom: "4 Спальни"
+      5bedroom: "5 Спальни"
+  pricing_parameter:
+    name:
+      bathrooms: "Санузлы"
+  extra:
+    name:
+      ironing: "Глажка"

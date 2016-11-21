@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     post 'auth', to: 'authentication#auth'
     resources :frequencies, only: :index
+    resources :services, only: :index
   end
 
 end
