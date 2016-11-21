@@ -1,0 +1,3 @@
+ru:
+  authenticate_user:
+    invalid_credentials: "Недопустимые учетные данные"
