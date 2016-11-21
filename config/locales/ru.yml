@@ -1,3 +1,8 @@
 ru:
   authenticate_user:
     invalid_credentials: "Недопустимые учетные данные"
+  frequency:
+    name:
+      once: "Один раз"
+      bi_weekly: "Раз в 2 недели"
+      weekly: "Раз в неделю"

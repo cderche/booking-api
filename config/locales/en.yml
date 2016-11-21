@@ -1,3 +1,8 @@
 en:
   authenticate_user:
     invalid_credentials: "Invalid credentials"
+  frequency:
+    name:
+      once: "One time"
+      bi_weekly: "Every 2 weeks"
+      weekly: "Once a week"
